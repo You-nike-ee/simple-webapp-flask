@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['MYSQL_DATABASE_USER'] = 'eunice'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'example'
 app.config['MYSQL_DATABASE_DB'] = 'flaskdb'
-app.config['MYSQL_DATABASE_HOST'] = 'db'  # 'db' refers to Docker Compose service
+app.config['MYSQL_DATABASE_HOST'] = 'db'
 
 mysql = MySQL()
 mysql.init_app(app)
