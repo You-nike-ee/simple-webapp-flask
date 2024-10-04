@@ -16,4 +16,4 @@ spec:
         - name: my-flask-app
           image: euniceleo/my_api_image:latest
           ports:
-            - containerPort: 8080
+           - containerPort: 8080
