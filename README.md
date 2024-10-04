@@ -1,43 +1,23 @@
-# Simple Web Application
+# Simple Webapp Flask API Project
 
-This is a simple web application using [Python Flask](http://flask.pocoo.org/) and [MySQL](https://www.mysql.com/) database. 
-This is used in the demonstration of the development of Ansible Playbooks.
-  
-  Below are the steps required to get this working on a base linux system.
-  
-  - **Install all required dependencies**
-  - **Install and Configure Web Server**
-  - **Start Web Server**
-   
-## 1. Install all required dependencies
-  
-  Python and its dependencies
-  ```bash
-  apt-get install -y python3 python3-setuptools python3-dev build-essential python3-pip default-libmysqlclient-dev
-  ```
-   
-## 2. Install and Configure Web Server
+## Project Summary
 
-Install Python Flask dependency
-```bash
-pip3 install flask
-pip3 install flask-mysql
-```
+### 1. **API Description**
+This API, built using Flask, is a simple web application that connects to a MySQL database. It features endpoints such as:
+- `GET /`: Returns a welcome message.
+- `GET /how are you`: Returns a status message.
 
-- Copy `app.py` or download it from a source repository
-- Configure database credentials and parameters 
+### 2. **Containerization**
+The API was containerized using **Docker**. A `Dockerfile` was created to build the Flask application image, and **Docker Compose** was used to integrate the API with MySQL.
 
-## 3. Start Web Server
+### 3. **Security Measures**
+- **Secrets Management** using GitHub Secrets for sensitive data.
+- **Image Security** by minimizing dependencies.
+- **Network Security** using internal Kubernetes networking.
 
-Start web server
-```bash
-FLASK_APP=app.py flask run --host=0.0.0.0
-```
+### 4. **CI/CD Process**
+A CI/CD pipeline was set up using **GitHub Actions** for automated build, test, and deployment to Kubernetes.
 
-## 4. Test
+### 5. **Kubernetes Deployment**
+The API was deployed on a **Kubernetes** cluster using KinD, managed with `deployment.yaml` and `service.yaml` files.
 
-Open a browser and go to URL
-```
-http://<IP>:5000                            => Welcome
-http://<IP>:5000/how%20are%20you            => I am good, how about you?
-```
