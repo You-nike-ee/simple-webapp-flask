@@ -53,8 +53,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+    - name: List k8s directory contents
+      run: 
+        ls -al k8s/
+     
     - name: Deploy to Kubernetes
       run: |
-        kubectl apply -f k8s/deployment.yaml
-        kubectl apply -f k8s/service.yaml
+        kubectl apply -f ./k8s/deployment.yaml
+        kubectl apply -f ./k8s/service.yaml
 
