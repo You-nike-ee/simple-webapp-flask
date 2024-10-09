@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-flask-app-deploymnet
+  name: my-flask-app-deployment
 spec:
   replicas: 1
   selector:
